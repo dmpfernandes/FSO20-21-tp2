@@ -9,6 +9,9 @@ public class ServidorDoRobot extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private static ServidorDoRobot frame;
+	private CanalDeComunicacao canal;
+	private ReceberMensagem_Servico rmservice;
+	private JTextArea textAreaComandosLidos;
 	
 	public ServidorDoRobot() {
 		initGUI();
@@ -29,15 +32,17 @@ public class ServidorDoRobot extends JFrame{
 	}
 	
 	public void run() {
-		while(true) {
-			
-		}
+		Mensagem msg;
+		canal = new CanalDeComunicacao("teste");
+		rmservice = new ReceberMensagem_Servico(canal, textAreaComandosLidos);
+		rmservice.start();
+		
 	}
 
 	private void initGUI() {
 		getContentPane().setLayout(null);
 		
-		JTextArea textAreaComandosLidos = new JTextArea();
+		textAreaComandosLidos = new JTextArea();
 		textAreaComandosLidos.setBounds(6, 52, 272, 323);
 		getContentPane().add(textAreaComandosLidos);
 		
