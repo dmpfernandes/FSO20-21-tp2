@@ -1,6 +1,13 @@
 
 public class Mensagem {
 	
+	//Tipos possiveis:
+	//Reta = 0
+	//Parar = 1
+	//Parar assincrono = 2
+	//Curva esquerda = 3
+	//Curva direita = 4
+	
 	private int id;
 	private int tipo;
 	private int raio = -1;
@@ -20,8 +27,36 @@ public class Mensagem {
 	}
 	
 	public Mensagem(int tipo, boolean parar){
-		this.tipo = tipo;
-		this.parar = parar?1:0;
+		this.tipo = parar?1:2;
+	}
+	
+	@Override
+	public String toString() {
+		String msg = "";
+		
+		switch(tipo) {
+		case 0:
+			if(distancia > 0) {
+				msg += "Mensagem: Reta durante " + distancia +" cm.";
+			} else if(distancia < 0) {
+				msg += "Mensagem: Retaguarda durante " + distancia +" cm.";		
+			}
+			break;
+		case 1:
+			msg += "Mensagem: Parar após executar todos os comandos.";
+			break;
+		case 2:
+			msg += "Mensagem: Parar Imediatamente.";
+			break;
+		case 3:
+			msg += "Mensagem: Curva a esquerda com raio de " + raio + "e angulo " + angulo + "º";
+			break;
+		case 4:
+			msg += "Mensagem: Curva a direita com raio de " + raio + "e angulo " + angulo + "º";
+			break;
+		}
+		
+		return msg;
 	}
 	
 	public int getId() {
@@ -72,10 +107,6 @@ public class Mensagem {
 		this.parar = parar;
 	}
 
-//	@Override
-//	public String toString() {
-//		
-//		return "id: "+id+" tipo:"+tipo+" texto:"+texto;
-//	}
+	
 	
 }
