@@ -12,6 +12,7 @@ public class ServidorDoRobot extends JFrame{
 	private CanalDeComunicacao canal;
 	private ReceberMensagem_Servico rmservice;
 	private JTextArea textAreaComandosLidos;
+	private JTextArea textAreaComandosExecutados;
 	
 	public ServidorDoRobot() {
 		initGUI();
@@ -34,7 +35,7 @@ public class ServidorDoRobot extends JFrame{
 	public void run() {
 		Mensagem msg;
 		canal = new CanalDeComunicacao("teste");
-		rmservice = new ReceberMensagem_Servico(canal, textAreaComandosLidos);
+		rmservice = new ReceberMensagem_Servico(canal, textAreaComandosLidos, textAreaComandosExecutados);
 		rmservice.start();
 		
 	}
@@ -46,7 +47,7 @@ public class ServidorDoRobot extends JFrame{
 		textAreaComandosLidos.setBounds(6, 52, 272, 323);
 		getContentPane().add(textAreaComandosLidos);
 		
-		JTextArea textAreaComandosExecutados = new JTextArea();
+		textAreaComandosExecutados = new JTextArea();
 		textAreaComandosExecutados.setBounds(342, 52, 272, 323);
 		getContentPane().add(textAreaComandosExecutados);
 		
