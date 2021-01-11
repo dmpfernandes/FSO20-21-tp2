@@ -3,7 +3,7 @@ import java.util.List;
 
 public class DesenharQuadrado{
 	
-	public List<Mensagem> gerarComandos(){
+	public static List<Mensagem> gerarComandos(){
 		List<Mensagem> comandos = new ArrayList<Mensagem>();
 		
 		for(int i = 0; i < 4; i++) {

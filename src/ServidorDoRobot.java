@@ -34,7 +34,7 @@ public class ServidorDoRobot extends JFrame{
 	
 	public void run() {
 		Mensagem msg;
-		canal = new CanalDeComunicacao("teste");
+		canal = new CanalDeComunicacao();
 		rmservice = new ReceberMensagem_Servico(canal, textAreaComandosLidos, textAreaComandosExecutados);
 		rmservice.start();
 		

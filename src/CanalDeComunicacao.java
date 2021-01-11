@@ -17,8 +17,8 @@ public class CanalDeComunicacao {
 	private static int putCounter = 0;
 	private int getCounter = 0;
 	
-	public CanalDeComunicacao(String nomeDoFicheiro) {
-		file = new File(nomeDoFicheiro);
+	public CanalDeComunicacao() {
+		file = new File("teste");
 		try {
 			this.memoryMappedFile = new RandomAccessFile(file, "rw");
 			this.map = memoryMappedFile.getChannel().map(FileChannel.MapMode.READ_WRITE, 0, MAX_BUFFER);

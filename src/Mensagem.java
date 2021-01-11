@@ -6,6 +6,7 @@ public class Mensagem {
 	//Parar = 1
 	//Curva esquerda = 2
 	//Curva direita = 3
+	//Nome Robot = 4
 	
 	private int id;
 	private int tipo;
@@ -13,6 +14,7 @@ public class Mensagem {
 	private int angulo = -1;
 	private int distancia = 0;
 	private int parar = -1;
+	private String nomeRobot;
 	
 	public Mensagem(int tipo, int raio, int angulo){
 		this.tipo = tipo;
@@ -28,6 +30,11 @@ public class Mensagem {
 	public Mensagem(int tipo, boolean parar){
 		this.tipo = tipo;
 		this.parar = parar?1:0;
+	}
+	
+	public Mensagem(int tipo, String nomeRobot){
+		this.tipo = tipo;
+		this.nomeRobot = nomeRobot;
 	}
 	
 	@Override

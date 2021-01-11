@@ -9,7 +9,7 @@ public class DesenharCirculo{
 			//Curva esquerda = 2
 			//Curva direita = 3
 			
-	public List<Mensagem> gerarComandos(){
+	public static List<Mensagem> gerarComandos(){
 		List<Mensagem> comandos = new ArrayList<Mensagem>();
 
 		comandos.add(new Mensagem(3, 25, 360));
