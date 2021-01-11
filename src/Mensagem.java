@@ -53,12 +53,16 @@ public class Mensagem {
 			if(parar == 0) msg += "Mensagem: Parar após executar todos os comandos.";
 			else msg = "Mensagem: Parar Imediatamente.";
 			break;
-		case 3:
+		case 2:
 			msg = "Mensagem: Curva a esquerda com raio de " + raio + "e angulo " + angulo + "º";
 			break;
-		case 4:
+		case 3:
 			msg = "Mensagem: Curva a direita com raio de " + raio + "e angulo " + angulo + "º";
 			break;
+		case 4:
+			msg = "Mensagem: Nome do Robot "+nomeRobot;
+			break;
+			
 		}
 		
 		return msg;
